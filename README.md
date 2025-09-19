@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+### **프로젝트 기획 배경**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- **실무 환경과 유사한 아키텍처**(React + Spring Boot + MySQL + AWS)를 직접 구축하여 풀스택 역량 강화
+- 간편식, 식단, 음료, 의료기기와 같은 **생활 밀접형 상품군**을 바탕으로 검색, 카테고리화, 주문 프로세스를 설계
+- 단순 CRUD 구현을 넘어 **보안, 성능, 인프라 운영까지 고려한 학습형 프로젝트**로 진행
 
-## Available Scripts
+### **프로젝트 개발 환경**
 
-In the project directory, you can run:
+- **프론트엔드** : React, TypeScript
+- **백엔드** : Java Spring Boot
+- **DB** : MySQL
+- **인프라** : AWS S3 (이미지 저장소)
 
-### `npm start`
+### **프로젝트 제작 기간**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 2025.01 ~ 현재 작업중
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### **기능 명세**
 
-### `npm test`
+- **유저 관련**
+    - 회원가입 / 로그인 / 로그아웃 /  비밀번호 찾기 기능
+    - 마이페이지 → 주문 내역 및 회원 정보 수정 API 구현
+- **상품 관련**
+    - 상품 검색 및 카테고리별 조회 기능 (간편식, 식단, 음료, 의료기기)
+    - 장바구니 담기 / 삭제 기능
+    - 바로구매 기능
+    - 주문하기 기능 (상품 선택 → 결제 프로세스 시뮬레이션)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### **프로젝트 주안점**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. **사용자 편의성을 고려한 검색 및 카테고리화**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 상품 카테고리(간편식/식단/음료/의료기기) 별로 상품을 빠르게 조회할 수 있도록 카테고리화 기능 구현
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. **보안 및 데이터 무결성 확보**
 
-### `npm run eject`
+- 회원가입 시 비밀번호를 해싱하여 DB 저장, 사용자 정보 보안 강화
+- 로그인 세션 및 인증 로직을 구현하여 사용자별 장바구니 및 주문 데이터의 무결성 보장
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 3. **실제 서비스 운영에 준하는 인프라 구축**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **AWS S3를 통한 상품 이미지 저장 및 관리**로 클라우드 환경 활용 능력 확보
+- 추후 결제 모듈 연동 및 배포 자동화를 고려한 확장성 높은 아키텍처 설계
