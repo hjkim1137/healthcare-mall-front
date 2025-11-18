@@ -1,46 +1,154 @@
-# Getting Started with Create React App
+# 🛒 LifeCare Mall – 풀스택 기반 이커머스 플랫폼
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> React · Spring Boot · MySQL · AWS 기반으로 구축한 **2인 팀 프로젝트**입니다.  
+> 이커머스 도메인의 핵심 기능인 **검색 · 장바구니 · 바로구매 · 주문 · 인증 · 이미지 업로드 · 관리자 페이지**를 구현했으며,  
+> 단순 CRUD를 넘어 실제 서비스 운영을 고려한 아키텍처와 사용자 경험(UX)을 설계했습니다.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 👥 프로젝트 형태
 
-### `npm start`
+- **2인 풀스택 팀 프로젝트**
+- 역할 분담  
+  - 프론트엔드/백엔드 주요 기능 병렬 개발  
+  - 공통 API 설계 및 협업 환경 구축  
+  - 코드 구조 표준화, Git 브랜칭 전략(Git-flow) 사용  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📌 프로젝트 기획 배경
 
-### `npm test`
+- 실무와 유사한 기술 스택으로 서비스 전체 흐름 경험  
+- 간편식·식단·의료기기 등 건강 관련 상품 기반 이커머스 설계  
+- AWS S3 활용, 인증 보안, 주문 흐름 등 실서비스 수준 기능 구현  
+- 현재 **관리자(Admin) 페이지 고도화 진행 중**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠 기술 스택
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Frontend**
+- React  
+- TypeScript  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Backend**
+- Spring Boot  
+- Spring Security  
+- JPA / Hibernate  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Database**
+- MySQL  
 
-### `npm run eject`
+### **Infra**
+- AWS S3 (상품 이미지 저장소)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📅 진행 기간
+- **2025.01 ~ 진행 중**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# 🚀 핵심 기능
 
-## Learn More
+## 🔹 유저 기능
+- 회원가입 / 로그인 / 로그아웃
+- **비밀번호 찾기(메일 기반 인증)**
+  - 이메일로 **임시 비밀번호 + 인증 토큰 발송**
+  - 토큰 유효 시간 내 인증 시 비밀번호 변경 가능  
+- 마이페이지
+  - 회원 정보 수정  
+  - 주문 내역 조회  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔹 상품 기능
+- **상품 검색 / 카테고리별 조회**
+- **장바구니**
+  - 수량 조정 (+/-) 시 **개별 금액 & 총 금액 실시간 반영**
+  - 선택 상품 전체 삭제 / 개별 삭제
+- **바로구매 (Session Storage 기반)**
+  - 선택 상품 정보를 sessionStorage에 저장  
+  - 장바구니를 거치지 않고 주문 페이지로 즉시 이동  
+  - 새로고침해도 유지되는 상태 관리 구현  
+
+---
+
+## 🔹 주문 기능
+
+### ✔ 1) 주문 수량 조정 & 실시간 가격 반영
+- 상품별 금액 및 전체 결제 금액 자동 갱신  
+- React 상태 및 서버 API와 동기화  
+
+### ✔ 2) 전체 선택 / 선택 삭제
+- 전체 선택/해제  
+- 선택된 항목만 삭제 가능  
+
+### ✔ 3) 주문자 정보 자동 입력
+- 로그인 사용자 정보 API 호출로 자동 채움  
+
+### ✔ 4) “주문자 정보와 동일” 기능
+- 클릭 시 수신자 정보를 주문자 정보로 자동 복사  
+
+---
+
+## 🔹 관리자(Admin) 페이지 _(작업 중)_
+- 상품 등록 / 수정 / 삭제  
+- 주문 관리  
+- 회원 관리  
+- 관리자 전용 권한 및 데이터 검증 처리  
+
+---
+
+# 🎯 프로젝트 주안점
+
+## 1️⃣ 사용자 편의성 중심 설계
+- 카테고리 기반 탐색  
+- 검색 최적화  
+- 주문 과정의 클릭 최소화  
+- 입력 자동화(주문자 자동 채움 기능)  
+
+## 2️⃣ 보안 및 데이터 무결성 강화
+- 비밀번호 bcrypt 해싱 저장  
+- 인증 기반 장바구니 및 주문 보호  
+- 이메일 기반 비밀번호 찾기 + 토큰 만료 처리  
+
+## 3️⃣ 실 서비스에 준하는 기능 구현
+- AWS S3 이미지 업로드/관리  
+- 실제 이커머스 형태의 주문 플로우  
+  - 검색 → 장바구니/바로구매 → 주문 → 결제 시뮬레이션  
+- 관리자 페이지 기반 운영 프로세스 고려  
+
+## 4️⃣ 팀 협업 구조
+- 역할 분담  
+- API 명세 기반 협업  
+- Git-flow 전략  
+- 코드 리뷰 및 구조 통일  
+
+---
+
+# 🎥 주요 시연 영상
+- 🔍 **상품 검색 및 카테고리 조회 영상**  
+
+
+- 🛒 **장바구니 기능 시연 영상**  
+
+
+- ⚡ **바로구매(Session Storage) 시연 영상**  
+
+
+- 📦 **주문 처리 플로우 영상**  
+
+
+- 👤 **비밀번호 찾기(이메일 인증) 시연 영상**  
+
+
+---
+
+# 📈 향후 계획
+
+- 관리자 페이지 기능 확장  
+- AWS EC2 + RDS 기반 실제 배포  
+- OAuth 소셜 로그인  
+- AI 기반 상품 추천 기능  
+
