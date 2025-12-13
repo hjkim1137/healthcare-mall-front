@@ -1,3 +1,5 @@
+# n8n 자동화 테스트
+
 # 🛒 LifeCare Mall – **풀스택 이커머스 플랫폼**
 
 React · Spring Boot · MySQL · AWS 기반의 **2인 팀 프로젝트**로,  
