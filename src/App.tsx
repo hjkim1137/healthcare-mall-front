@@ -15,7 +15,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Main />} />
         <Route path="/:id" element={<Main />} />
         <Route path="/cart" element={<Cart />} />
